@@ -22,15 +22,19 @@ const rangeright = document.querySelector("#rangeright");
 const input2 = document.querySelector("#input2");
 const button2 = document.querySelector(".btn2");
 
-function getRandom(x){
-    return Math.floor(Math.random()*x)+1;
-};
+function getRandom(min,max){
+    return Math.floor(Math.random()*(max-min+1))+min;
+}
 
-button2.addEventListener("click" , function(){
-    let guess = input2.value;
-    let answer = getRandom(100);
-
-      
-    });
-
+let random = getRandom(1,10);
+while(true){
+ let num = prompt("你來猜呀");
+ if(num>random){
+    alert("你太大了!");
+ } else if(num<random){
+    alert("你太小了!");
+ } else{
+    alert("你好帥呀!");
+ }
+}
 
